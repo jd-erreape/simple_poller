@@ -1,4 +1,4 @@
-/***** TURBOLINKS COMPATIBILITY **************/
+#***** TURBOLINKS COMPATIBILITY **************
 
 #$(window).bind('page:fetch', function () {
 #    stop_all_timers();
@@ -13,7 +13,7 @@
 #    window.timeouts = [];
 #}
 
-/***** END TURBOLINKS COMPATIBILITY **************/
+#***** END TURBOLINKS COMPATIBILITY **************
 
 window.active_clocks = []
 
