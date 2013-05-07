@@ -19,7 +19,9 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
+  s.add_development_dependency 'guard'
+  s.add_development_dependency 'guard-coffeescript'
+  s.add_development_dependency 'jasmine'
   # s.add_runtime_dependency "rest-client"
   s.add_dependency 'railties', '~> 3.1'
 

@@ -15,8 +15,10 @@
 
 #***** END TURBOLINKS COMPATIBILITY **************
 
+#Global Clocks Array
 window.active_clocks = []
 
+#Resource Retriever
 class window.ResourceRetriever
 
   constructor: (request_url) ->
@@ -37,6 +39,7 @@ class window.ResourceRetriever
   run_load_callback: ->
     @load_callback() if @load_callback
 
+#Simple Clock
 class window.SimpleClock
 
   constructor: (resource_retriever, timeout) ->
