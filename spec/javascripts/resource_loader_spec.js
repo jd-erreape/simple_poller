@@ -1,23 +1,25 @@
-describe('ResourceLoader', function () {
+(function() {
+  describe('ResourceLoader', function() {
+    beforeEach(function() {
+      var that;
 
-    var resource_loader;
-    var fakeData;
-    var fakeUrl;
-
-    beforeEach(function () {
-        fakeData = {a: 1, b: 2, c: 3};
-        fakeUrl = 'http://www.test.com/ajax'
-        spyOn($, "ajax").andCallFake(function (e) {
-            e.success(fakeData);
-        });
-
+      that = this;
+      this.fakeData = {
+        a: 1,
+        b: 2,
+        c: 3
+      };
+      this.fakeUrl = 'http://www.test.com/ajax';
+      return spyOn($, "ajax").andCallFake(function(e) {
+        return e.success(that.fakeData);
+      });
     });
-
-    it('perform an ajax request for a json and load a resource', function () {
-        var resource = jasmine.createSpyObj('resource',['load_callback']);
-        resource_loader = new ResourceLoader(fakeUrl, resource);
-        resource_loader.load();
-        expect(resource.load_callback).toHaveBeenCalledWith(fakeData);
+    return it('perform an ajax request for a json and load a resource', function() {
+      this.resource = jasmine.createSpyObj('resource', ['load_callback']);
+      this.resource_loader = new ResourceLoader(this.fakeUrl, this.resource);
+      this.resource_loader.load();
+      return expect(this.resource.load_callback).toHaveBeenCalledWith(this.fakeData);
     });
+  });
 
-});
+}).call(this);

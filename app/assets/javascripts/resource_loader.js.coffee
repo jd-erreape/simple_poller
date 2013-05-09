@@ -13,5 +13,4 @@ class window.ResourceLoader
       success: (data) ->
         that.resource.load_callback(data)
       error: ->
-
         #TODO Manage error

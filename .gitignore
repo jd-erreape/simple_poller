@@ -7,3 +7,4 @@ pkg/*
 /.idea
 .rvmrc
 public/javascripts
+spec/javascripts/*.js
