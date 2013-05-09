@@ -7,7 +7,7 @@ class window.SimplePoller
 
   start: ->
     @clock_id = @poll()
-    @add_clock_globally()
+    @add_poller_globally()
 
   stop: ->
     clearInterval(@clock_id)
@@ -25,7 +25,7 @@ class window.SimplePoller
       that.resource_loader.load()
     , @timeout)
 
-  add_clock_globally: ->
+  add_poller_globally: ->
     window.active_pollers.push(@) if window.active_pollers
 
 

@@ -1,7 +1,7 @@
 #***** TURBOLINKS COMPATIBILITY **************
 
 #$(window).bind('page:fetch', function () {
-#    stop_all_timers();
+#    stop_all_pollers();
 #});
 
 #***** END TURBOLINKS COMPATIBILITY **************
