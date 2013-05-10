@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "polling_manager/version"
+require "simple_poller/version"
 
 Gem::Specification.new do |s|
-  s.name        = "polling_manager"
-  s.version     = PollingManager::VERSION
+  s.name        = "simple_poller"
+  s.version     = SimplePoller::VERSION
   s.authors     = ["jd-erreape"]
   s.email       = ["juandediosherrero@gmail.com"]
   s.homepage    = ""
   s.summary     = %q{Write a gem summary}
   s.description = %q{Write a gem description}
 
-  s.rubyforge_project = "polling_manager"
+  s.rubyforge_project = "simple_poller"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

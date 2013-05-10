@@ -1,6 +1,6 @@
-require "polling_manager/version"
+require "simple_poller/version"
 
-module PollingManager
+module SimplePoller
   module Rails
     class Engine < ::Rails::Engine
     end
