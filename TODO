@@ -1,2 +1,0 @@
-- JQuery has been included directly into public/javascripts for spec to work. It would be nice to add it automatically
-somehow during the development

@@ -20,6 +20,7 @@ In order to install the gem for development you should:
     - Add jquery 1.9 to public directory
     - execute jasmine to run the tests -> bundle exec rake jasmine (visit localhost:8888)
 
+check https://github.com/jd-erreape/simple_poller/wiki/TODO for things to do
 
 
 
