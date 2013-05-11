@@ -10,7 +10,15 @@ Here goes installation
 
 ### Contributing
 
-Here goes contributing
+All contributions are welcomed! :)
+
+In order to install the gem for development you should:
+
+    - git clone the repository
+    - create a gemset and run bundle
+    - execute guard to compile all the coffeescript into javascript -> bundle exec guard
+    - Add jquery 1.9 to public directory
+    - execute jasmine to run the tests -> bundle exec rake jasmine (visit localhost:8888)
 
 
 
