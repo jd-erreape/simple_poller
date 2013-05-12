@@ -1,3 +1,36 @@
+#***** TURBOLINKS COMPATIBILITY **************
+
+#$(window).bind('page:fetch', function () {
+#    stop_all_pollers();
+#});
+
+#***** END TURBOLINKS COMPATIBILITY **************
+
+#Global Clocks Array
+window.active_pollers = []
+
+window.stop_all_pollers = ->
+  for poller in window.active_pollers
+    clearInterval(poller.clock_id)
+  window.active_pollers = []
+
+class window.ResourceLoader
+
+  constructor: (request_url, resource) ->
+    @request_url = request_url
+    @resource = resource
+
+  load: ->
+    that = @
+    $.ajax
+      url: this.request_url
+      type: 'GET'
+      dataType: 'JSON'
+      success: (data) ->
+        that.resource.load_callback(data)
+      error: ->
+        #TODO Manage error
+
 class window.SimplePoller
 
   constructor: (resource_loader, timeout) ->
