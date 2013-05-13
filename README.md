@@ -4,9 +4,21 @@
 
 Here goes introduction
 
-### Installation
+### Getting started
 
-Here goes installation
+1. Include Simple Poller to your Gemfile if you haven't done yet:
+
+        gem 'simple_poller'
+
+2. At the command prompt, install the gem:
+
+        bundle install
+
+3. Finally, configure your application to use Simple Poller:
+
+        rails g simple_poller:install
+
+That's all!
 
 ### Contributing
 
