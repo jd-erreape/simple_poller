@@ -1,0 +1,8 @@
+Description:
+    Setup Simple Poller assets in your app
+
+Example:
+  rails g simple_poller:install
+
+  This will insert simple_poller require line into default application assets:
+    /app/assets/javascripts/application.js
