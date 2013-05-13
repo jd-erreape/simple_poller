@@ -2,7 +2,10 @@
 
 ### Introduction
 
-Here goes introduction
+You can use simple_poller to perform a simple long polling from client side to server side into a rails app.
+In order to use it, you only will have to define an object with a load callback, specify an url to perform the polling and the timeout you wish.
+
+simple_poller allows you to start, stop or update the timeout for polling. It is a new gem so stay alert for changes and improvements. All contributions are welcomed!
 
 ### Getting started
 
@@ -24,7 +27,7 @@ You can check a sample app visiting https://github.com/jd-erreape/simple_poller_
 
 ### Contributing
 
-All contributions are welcomed! :)
+Once again, all contributions are welcomed! :)
 
 In order to install the gem for development you should:
 
