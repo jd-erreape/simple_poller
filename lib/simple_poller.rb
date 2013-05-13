@@ -5,8 +5,5 @@ if defined?(Rails)
 end
 
 module SimplePoller
-  module Rails
-    class Engine < ::Rails::Engine
-    end
-  end
+  require "simple_poller/engine" if defined?(Rails)
 end
