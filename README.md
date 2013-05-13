@@ -20,6 +20,8 @@ Here goes introduction
 
 That's all!
 
+You can check a sample app visiting https://github.com/jd-erreape/simple_poller_test
+
 ### Contributing
 
 All contributions are welcomed! :)
