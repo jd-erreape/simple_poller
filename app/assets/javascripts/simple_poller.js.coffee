@@ -6,6 +6,23 @@
 
 #***** END TURBOLINKS COMPATIBILITY **************
 
+# Accommodate running jQuery or Zepto in noConflict() mode by
+# using an anonymous function to redefine the $ shorthand name.
+# See http://docs.jquery.com/Using_jQuery_with_Other_Libraries
+# and http://zeptojs.com/
+window.vendoredLib = ->
+  if typeof jQuery is "undefined" && typeof Zepto is "undefined" && typeof $ is "function"
+    return $
+  else if typeof jQuery is "function"
+    return jQuery
+  else if typeof Zepto is "function"
+    return Zepto
+  else
+    return null
+
+window.libFuncName = window.vendoredLib()
+throw new TypeError() if window.libFuncName is null
+
 #Global Clocks Array
 window.active_pollers = []
 
@@ -22,7 +39,7 @@ class window.ResourceLoader
 
   load: ->
     that = @
-    $.ajax
+    window.libFuncName.ajax
       url: this.request_url
       type: 'GET'
       dataType: 'JSON'

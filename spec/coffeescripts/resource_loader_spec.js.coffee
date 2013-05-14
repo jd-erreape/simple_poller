@@ -4,7 +4,7 @@ describe 'ResourceLoader', ->
     that = @
     @fakeData = {a: 1, b: 2, c: 3};
     @fakeUrl = 'http://www.test.com/ajax'
-    spyOn($, "ajax").andCallFake( (e) ->
+    spyOn(window.libFuncName, "ajax").andCallFake( (e) ->
       e.success(that.fakeData)
     )
 
