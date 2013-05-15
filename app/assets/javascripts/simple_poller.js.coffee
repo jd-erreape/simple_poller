@@ -21,7 +21,7 @@ window.stop_all_pollers = ->
 class window.VendoredLib
 
   @libs: ->
-    [$, jQuery, Zepto]
+    [$, jQuery]
 
   @lib: ->
     return lib if typeof lib is 'function' for lib in @libs()
