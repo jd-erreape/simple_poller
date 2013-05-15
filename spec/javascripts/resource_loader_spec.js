@@ -10,7 +10,10 @@
         c: 3
       };
       this.fakeUrl = 'http://www.test.com/ajax';
-      return spyOn(window.libFuncName, "ajax").andCallFake(function(e) {
+      spyOn(VendoredLib, 'lib').andCallFake(function() {
+        return $;
+      });
+      return spyOn(VendoredLib.lib(), "ajax").andCallFake(function(e) {
         return e.success(that.fakeData);
       });
     });

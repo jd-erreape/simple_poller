@@ -6,23 +6,6 @@
 
 #***** END TURBOLINKS COMPATIBILITY **************
 
-# Accommodate running jQuery or Zepto in noConflict() mode by
-# using an anonymous function to redefine the $ shorthand name.
-# See http://docs.jquery.com/Using_jQuery_with_Other_Libraries
-# and http://zeptojs.com/
-window.vendoredLib = ->
-  if typeof jQuery is "undefined" && typeof Zepto is "undefined" && typeof $ is "function"
-    return $
-  else if typeof jQuery is "function"
-    return jQuery
-  else if typeof Zepto is "function"
-    return Zepto
-  else
-    return null
-
-window.libFuncName = window.vendoredLib()
-throw new TypeError() if window.libFuncName is null
-
 #Global Clocks Array
 window.active_pollers = []
 
@@ -30,6 +13,19 @@ window.stop_all_pollers = ->
   for poller in window.active_pollers
     clearInterval(poller.clock_id)
   window.active_pollers = []
+
+# Accommodate running jQuery or Zepto in noConflict() mode by
+# using an anonymous function to redefine the $ shorthand name.
+# See http://docs.jquery.com/Using_jQuery_with_Other_Libraries
+# and http://zeptojs.com/
+class window.VendoredLib
+
+  @libs: ->
+    [$, jQuery, Zepto]
+
+  @lib: ->
+    return lib if typeof lib is 'function' for lib in @libs()
+    throw new TypeError()
 
 class window.ResourceLoader
 
@@ -39,7 +35,7 @@ class window.ResourceLoader
 
   load: ->
     that = @
-    window.libFuncName.ajax
+    VendoredLib.lib().ajax
       url: this.request_url
       type: 'GET'
       dataType: 'JSON'
